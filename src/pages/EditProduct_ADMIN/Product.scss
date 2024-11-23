@@ -1,0 +1,29 @@
+.product{
+    display: flex;
+    flex-wrap: wrap;
+    &__item{
+        width: 20%;
+        margin-right: 20px;
+        margin-left: 20px;
+        border: 1px solid #ddd;
+        margin-bottom: 20px;
+    }
+    &__img{
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        border-radius: 10px;
+       
+    }
+    &__title{
+        color: black;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    &__price{
+        color: #e43c3c;
+        font-weight: 700;
+    }
+   
+}
+
