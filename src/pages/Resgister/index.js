@@ -9,8 +9,9 @@ function Register() {
         e.preventDefault();
         const fullName = e.target[0].value;
         const city = e.target[1].value;
-        const phonenumber = e.target[2].value;
-        const password = e.target[3].value;
+        const birth = e.target[2].value;
+        const phonenumber = e.target[3].value;
+        const password = e.target[4].value;
 
         const checkExitsPhoneNumber = await checkExits("phone_number", phonenumber)
         console.log(checkExitsPhoneNumber);
@@ -21,18 +22,24 @@ function Register() {
         else {
             const options = {
                 fullName: fullName,
-                city: city,
-                phonenumber: phonenumber,
+                phone_number: phonenumber,
+                address:city,
                 password: password,
+                created_at: "CURRENT_TIMESTAMP",
+                updated_at: "CURRENT_TIMESTAMP",
+                date_of_birth:birth,
+                expired: 1,
+                role: "user",
                 token: generateToken()
             }
             const response = await register(options)
             
             if (response) {
+                alert("Đăng ký thành công")
                 navigate("/login")
             }
             else {
-                alert("Dang ky that bai")
+                alert("Đăng ký thất bại")
             }
             
         }
@@ -64,10 +71,11 @@ function Register() {
                             <div className="signup-form">{/*sign up form*/}
                                 <h2>Đăng ký tài khoản</h2>
                                 <form action="#">
-                                    <input type="text" placeholder="Nhập họ và tên" />
-                                    <input type="text" placeholder="Thành phố đang sống" />
-                                    <input type="number" placeholder="Nhập số điện thoại" />
-                                    <input type="password" placeholder="Nhập mật khẩu" />
+                                    <input type="text" placeholder="Nhập họ và tên"  required/>
+                                    <input type="text" placeholder="Thành phố đang sống" required/>
+                                    <input type="text" id="date_of_birth" name="date_of_birth" placeholder="dd/mm/yyyy" pattern="\d{2}/\d{2}/\d{4}" required /> 
+                                    <input type="number" placeholder="Nhập số điện thoại" required/>
+                                    <input type="password" placeholder="Nhập mật khẩu" required/>
                                     <button type="submit" className="btn btn-default">Đăng ký</button>
                                 </form>
                             </div>{/*/sign up form*/}

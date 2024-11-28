@@ -80,7 +80,7 @@ export function Contact() {
                                 <div className="contact-info">
                                     <h2 className="title text-center">Thông tin liên hệ</h2>
                                     <address>
-                                        <p>Nhóm 14 Thực Tập Cơ Sở Ngành</p>
+                                        <p>Nhóm 12 Phát Triển Dự Án Công Nghệ Thông Tin</p>
                                         <p>Đại Học Công Nghiệp hà Nội</p>
                                         <p>Nhổn, Bắc Từ Liêm, Hà Nội</p>
                                         <p>Mobile: +84 973 402 957</p>
