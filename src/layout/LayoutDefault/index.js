@@ -35,7 +35,7 @@ function LayoutDefault() {
                             <li>
                             <NavLink
                                 to="/"
-                                className="text-gray-700 font-semibold hover:text-[#85c1c9]"
+                                className="text-gray-700 font-semibold hover:text-cyan-700"
                             >
                                 Trang chủ
                             </NavLink>
@@ -43,7 +43,7 @@ function LayoutDefault() {
                             <li className="relative group">
                             <NavLink
                                 to="products"
-                                className="text-gray-700 font-semibold hover:text-[#85c1c9]"
+                                className="text-gray-700 font-semibold hover:text-cyan-700"
                             >
                                 Sản phẩm
                             </NavLink>
@@ -54,7 +54,7 @@ function LayoutDefault() {
                                 <li className="relative group/item1 px-4 py-2">
                                     <NavLink
                                     to="smartphones"
-                                    className="text-gray-700 hover:text-[#85c1c9] whitespace-nowrap"
+                                    className="text-gray-700 hover:text-cyan-700 whitespace-nowrap"
                                     >
                                     Điện thoại
                                     </NavLink>
@@ -64,7 +64,7 @@ function LayoutDefault() {
                                         <li className="px-4">
                                         <NavLink
                                             to="smartphones_iphone"
-                                            className="text-gray-700 hover:text-[#85c1c9]"
+                                            className="text-gray-700 hover:text-cyan-700"
                                         >
                                             Apple
                                         </NavLink>
@@ -72,7 +72,7 @@ function LayoutDefault() {
                                         <li className="px-4">
                                         <NavLink
                                             to="smartphones_samsung"
-                                            className="text-gray-700 hover:text-[#85c1c9]"
+                                            className="text-gray-700 hover:text-cyan-700"
                                         >
                                             Samsung
                                         </NavLink>
@@ -80,7 +80,7 @@ function LayoutDefault() {
                                         <li className="px-4">
                                         <NavLink
                                             to="smartphones_xioami"
-                                            className="text-gray-700 hover:text-[#85c1c9]"
+                                            className="text-gray-700 hover:text-cyan-700"
                                         >
                                             Xiaomi
                                         </NavLink>
@@ -88,7 +88,7 @@ function LayoutDefault() {
                                         <li className="px-4">
                                         <NavLink
                                             to="smartphones_khac"
-                                            className="text-gray-700 hover:text-[#85c1c9]"
+                                            className="text-gray-700 hover:text-cyan-700"
                                         >
                                             Khác
                                         </NavLink>
@@ -100,7 +100,7 @@ function LayoutDefault() {
                                 <li className="relative group/item2 px-4">
                                     <NavLink
                                     to="laptops"
-                                    className="text-gray-700 hover:text-[#85c1c9] whitespace-nowrap"
+                                    className="text-gray-700 hover:text-cyan-700 whitespace-nowrap"
                                     >
                                     Máy tính
                                     </NavLink>
@@ -110,7 +110,7 @@ function LayoutDefault() {
                                         <li className="px-4">
                                         <NavLink
                                             to="laptops_dell"
-                                            className="text-gray-700 hover:text-[#85c1c9]"
+                                            className="text-gray-700 hover:text-cyan-700"
                                         >
                                             Dell
                                         </NavLink>
@@ -118,7 +118,7 @@ function LayoutDefault() {
                                         <li className="px-4">
                                         <NavLink
                                             to="laptops_hp"
-                                            className="text-gray-700 hover:text-[#85c1c9]"
+                                            className="text-gray-700 hover:text-cyan-700"
                                         >
                                             HP
                                         </NavLink>
@@ -126,7 +126,7 @@ function LayoutDefault() {
                                         <li className="px-4">
                                         <NavLink
                                             to="laptops_asus"
-                                            className="text-gray-700 hover:text-[#85c1c9]"
+                                            className="text-gray-700 hover:text-cyan-700"
                                         >
                                             ASUS
                                         </NavLink>
@@ -134,7 +134,7 @@ function LayoutDefault() {
                                         <li className="px-4">
                                         <NavLink
                                             to="laptops_khac"
-                                            className="text-gray-700 hover:text-[#85c1c9]"
+                                            className="text-gray-700 hover:text-cyan-700"
                                         >
                                             Khác
                                         </NavLink>
@@ -148,7 +148,7 @@ function LayoutDefault() {
                             <li>
                             <NavLink
                                 to="contact"
-                                className="text-gray-700 font-semibold hover:text-[#85c1c9]"
+                                className="text-gray-700 font-semibold hover:text-cyan-700"
                             >
                                 Liên hệ
                             </NavLink>
@@ -159,7 +159,7 @@ function LayoutDefault() {
                         {/* Phần bên phải: Tìm kiếm, giỏ hàng, đăng nhập/đăng ký */}
                         <div className="flex items-center gap-12">
                         {/* Nút tìm kiếm */}
-                        <button className="text-gray-700 hover:text-[#85c1c9]">
+                        <button className="text-gray-700 hover:text-cyan-700">
                             <NavLink to="search">
                                 <i className="fas fa-search"></i> Tìm kiếm
                             </NavLink>
@@ -175,7 +175,7 @@ function LayoutDefault() {
                             {token ? (
                             <NavLink
                                 to="logout"
-                                className="text-gray-700 font-semibold hover:text-[#85c1c9]"
+                                className="text-gray-700 font-semibold hover:text-cyan-700"
                             >
                                 Đăng xuất
                             </NavLink>
@@ -184,7 +184,7 @@ function LayoutDefault() {
                                 <li>
                                 <NavLink
                                     to="login"
-                                    className="text-gray-700 font-semibold hover:text-[#85c1c9]"
+                                    className="text-gray-700 font-semibold hover:text-cyan-700"
                                 >
                                     <i className="fa fa-sign-in"></i> Đăng nhập
                                 </NavLink>
@@ -192,7 +192,7 @@ function LayoutDefault() {
                                 <li>
                                 <NavLink
                                     to="register"
-                                    className="text-gray-700 font-semibold hover:text-[#85c1c9]"
+                                    className="text-gray-700 font-semibold hover:text-cyan-700"
                                 >
                                     <i className="fa fa-user-plus"></i> Đăng ký
                                 </NavLink>
@@ -210,166 +210,52 @@ function LayoutDefault() {
                     <Outlet />
                 </div>
             </div>
-            <footer id="footer">
-                <div class="footer-top">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-2">
-                                <div class="companyinfo">
-                                    <h2><span>NHÓM14</span>-TTCSN</h2>
-                                    <p>Chuyên các sản phẩm, linh kiện ô tô</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-7">
-                                <div class="col-sm-3">
-                                    <div class="video-gallery text-center">
-                                        <a href="https://www.youtube.com/watch?v=Mm2fz1t39bk" target="blank">
-                                            <div class="iframe-img">
-                                                <img src="images/home/hqdefault.jpg" alt="" />
-                                            </div>
-                                            <div class="overlay-icon">
-                                                <i class="fa fa-play-circle-o"></i>
-                                            </div>
-                                        </a>
-                                        <p>TỰ LÀM VÀ BẢO TRÌ</p>
-                                        <h2>24 DEC 2018</h2>
-                                    </div>
-                                </div>
+            <footer className="bg-gray-100 py-8">
+                <div className="container mx-auto px-6 lg:px-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {/* Liên kết */}
+                    <div>
+                    <h3 className="text-cyan-700 text-lg font-semibold mb-4">Liên kết</h3>
+                    <ul className="space-y-2 text-cyan-700">
+                        <li><a href="#" className="hover:text-cyan-700">Trang chủ</a></li>
+                        <li><a href="#" className="hover:text-cyan-700">Sản phẩm</a></li>
+                        <li><a href="#" className="hover:text-cyan-700">Giới thiệu</a></li>
+                        <li><a href="#" className="hover:text-cyan-700">Liên hệ</a></li>
+                    </ul>
+                    </div>
 
-                                <div class="col-sm-3">
-                                    <div class="video-gallery text-center">
-                                        <a href="https://www.youtube.com/watch?v=MtPX0jBB6c0" target="blank">
-                                            <div class="iframe-img">
-                                                <img src="images/home/sua2.jpg" alt="" />
-                                            </div>
-                                            <div class="overlay-icon">
-                                                <i class="fa fa-play-circle-o"></i>
-                                            </div>
-                                        </a>
-                                        <p>SỬA XE HƠI</p>
-                                        <h2>21 FEB 2019</h2>
-                                    </div>
-                                </div>
+                    {/* Địa chỉ */}
+                    <div>
+                    <h3 className="text-cyan-700 text-lg font-semibold mb-4">Địa chỉ</h3>
+                    <ul className="space-y-2 text-cyan-700">
+                        <li><i className="fas fa-map-marker-alt"></i> Phường A, Quận B, Hà Nội</li>
+                        <li><i className="fas fa-phone-alt"></i> 0961750846</li>
+                        <li className="flex space-x-4 mt-2">
+                        <a href="#" className="text-cyan-700 hover:text-cyan-700"><i className="fab fa-instagram"></i></a>
+                        <a href="#" className="text-cyan-700 hover:text-cyan-700"><i className="fab fa-facebook"></i></a>
+                        <a href="#" className="text-cyan-700 hover:text-cyan-700"><i className="fab fa-twitter"></i></a>
+                        </li>
+                    </ul>
+                    </div>
 
-                                <div class="col-sm-3">
-                                    <div class="video-gallery text-center">
-                                        <a href="https://www.youtube.com/watch?v=ahh5AAfMtv8" target="blank">
-                                            <div class="iframe-img">
-                                                <img src="images/home/sua3.jpg" alt="" />
-                                            </div>
-                                            <div class="overlay-icon">
-                                                <i class="fa fa-play-circle-o"></i>
-                                            </div>
-                                        </a>
-                                        <p>GARA SỬA CHỮA</p>
-                                        <h2>15 OCT 2019</h2>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-3">
-                                    <div class="video-gallery text-center">
-                                        <a href="https://www.youtube.com/watch?v=3_h8NwzaSTg" target="blank">
-                                            <div class="iframe-img">
-                                                <img src="images/home/sua5.jpg" alt="" />
-                                            </div>
-                                            <div class="overlay-icon">
-                                                <i class="fa fa-play-circle-o"></i>
-                                            </div>
-                                        </a>
-                                        <p> Ô TÔ TỰ PHỤC VỤ</p>
-                                        <h2>09 DEC 2022</h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="address">
-                                    <img src="images/home/map.png" alt="" />
-                                    <p>Số 298 đường Cầu Diễn, quận Bắc Từ Liêm, Hà Nội</p>
-                                </div>
-                            </div>
-                        </div>
+                    {/* Form nhận thông tin */}
+                    <div>
+                    <h3 className="text-cyan-700 text-lg font-semibold mb-4">Nhận thông tin</h3>
+                    <form className="flex flex-col space-y-4">
+                        <input
+                        type="email"
+                        placeholder="Nhập địa chỉ Email"
+                        className="p-2 border border-gray-300 rounded-md"
+                        />
+                        <button type="submit" className="bg-cyan-700 text-white p-2 rounded-md hover:bg-cyan-900">
+                        Đăng ký
+                        </button>
+                        <p className="text-sm text-cyan-700">
+                        Nhận thông tin cập nhật mới nhất từ trang web của chúng tôi.
+                        </p>
+                    </form>
                     </div>
                 </div>
-
-                <div class="footer-widget">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <div class="single-widget">
-                                    <h2>DỊCH VỤ</h2>
-                                    <ul class="nav nav-pills nav-stacked">
-                                        <li><a href="#">Hỗ trợ trực tuyến</a></li>
-                                        <li><a href="#">Liên hệ chúng tôi</a></li>
-                                        <li><a href="#">Trạng thái đơn hàng</a></li>
-                                        <li><a href="#">Thay đổi địa điểm</a></li>
-                                        <li><a href="#">Câu hỏi thường gặp</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            {/* <div class="col-sm-2">
-                                <div class="single-widget">
-                                    <h2>Quock Shop</h2>
-                                    <ul class="nav nav-pills nav-stacked">
-                                        <li><a href="#">T-Shirt</a></li>
-                                        <li><a href="#">Mens</a></li>
-                                        <li><a href="#">Womens</a></li>
-                                        <li><a href="#">Gift Cards</a></li>
-                                        <li><a href="#">Shoes</a></li>
-                                    </ul>
-                                </div>
-                            </div> */}
-                            <div class="col-sm-3">
-                                <div class="single-widget">
-                                    <h2>CHÍNH SÁCH</h2>
-                                    <ul class="nav nav-pills nav-stacked">
-                                        <li><a href="#">Điều khoản sử dụng</a></li>
-                                        <li><a href="#">Chính sách quyền riêng tư</a></li>
-                                        <li><a href="#">Chính sách hoàn tiền</a></li>
-                                        <li><a href="#">Hệ thống thanh toán</a></li>
-                                        <li><a href="#">Hệ thống vé</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="single-widget">
-                                    <h2>Giới thiệu CÔNG TY</h2>
-                                    <ul class="nav nav-pills nav-stacked">
-                                        <li><a href="#">Thông tin công ty</a></li>
-                                        <li><a href="#">Nghề nghiệp</a></li>
-                                        <li><a href="#">Vị trí cửa hàng</a></li>
-                                        <li><a href="#">Chương trình liên kết</a></li>
-                                        <li><a href="#">Bản quyền</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 col-sm-offset-1">
-                                <div class="single-widget">
-                                    <h2>Nhận thông tin</h2>
-                                    <form action="#" class="searchform">
-                                        <input type="text" placeholder="Nhập địa chỉ Email" />
-                                        <button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
-                                        <p>Nhận thông tin cập nhật mới nhất từ
-                                            trang web của chúng tôi và tự cập nhật thông tin cho mình..</p>
-                                    </form>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="footer-bottom">
-                    <div class="container">
-                        <div class="row">
-                            <p class="pull-left">Copyright © 2024 ELECTRONICS DEVICE Inc. All rights reserved.</p>
-                            <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com" rel="noreferrer">NHOM 12 PTDACNTT</a></span></p>
-                        </div>
-                    </div>
-                </div>
-
-            </footer>
-
-            
+            </footer> 
         </>
     )
 }
