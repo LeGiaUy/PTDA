@@ -18,7 +18,7 @@ export function Products() {
       
 
       {data.length > 0 && (
-        <div className="bg-cyan-100 mx-12 rounded-xl">
+        <div className="bg-gray-100 mx-12 rounded-xl">
           <h2 className="text-cyan-700 font-semibold text-3xl text-center py-8">
             DANH SÁCH SẢN PHẨM
           </h2>

@@ -161,7 +161,7 @@ function LayoutDefault() {
                         {/* Nút tìm kiếm */}
                         <button className="text-gray-700 hover:text-cyan-700">
                             <NavLink to="search">
-                                <i className="fas fa-search"></i> Tìm kiếm
+                                <i className="fas fa-search"></i> <span className="text-gray-700 font-semibold">Tìm kiếm</span>
                             </NavLink>
                         </button>
 

@@ -1,18 +1,24 @@
 import { FaShoppingCart } from 'react-icons/fa';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { NavLink } from "react-router-dom";
-import "./index.scss"
-function CartMini(){
-    // lấy ra số lượng quantity để cho bên cạnh giỏ hàng
+
+function CartMini() {
+    // Lấy ra giỏ hàng từ Redux
     const cart = useSelector(state => state.cartReducer);
-    console.log(cart);
-    const total=cart.reduce((sum,item)=>{
-        return sum+item.quantity;
-    },0)
+    
+    // Tính tổng số lượng sản phẩm trong giỏ hàng
+    const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+    
     return (
-        <>
-        <NavLink to="cart"className="cart-mini" style={{display:'flex'}} >{<FaShoppingCart className="icon"/>}({total})</NavLink>
-        </>
-    )
+        <NavLink to="/cart" className="relative flex items-center text-gray-700 hover:text-cyan-700">
+            <FaShoppingCart className="text-2xl mr-2" />
+            {total > 0 && (
+                <span className="absolute top-[-5px] right-[-8px] bg-cyan-700 text-white text-xs rounded-full px-2 py-1">
+                    {total}
+                </span>
+            )}
+        </NavLink>
+    );
 }
+
 export default CartMini;

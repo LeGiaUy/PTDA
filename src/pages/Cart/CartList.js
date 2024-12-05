@@ -1,18 +1,21 @@
 import { useSelector } from "react-redux";
-import "./Cart.scss"
-import CartItem from "./CartItem"
+
+import CartItem from "./CartItem";
+
 function CartList() {
-    const cart = useSelector(state => state.cartReducer)
+    const cart = useSelector(state => state.cartReducer);
 
     return (
-        <>
-           
-            <div className="cart">
-                {cart.map(item => (
-                    <CartItem key={item.id} item={item}/>
-                ))}
-            </div>
-        </>
-    )
+        <div className="cart-list mt-6">
+            {cart.length > 0 ? (
+                cart.map(item => (
+                    <CartItem key={item.id} item={item} />
+                ))
+            ) : (
+                <div className="text-center text-gray-500">Giỏ hàng trống</div>
+            )}
+        </div>
+    );
 }
+
 export default CartList;
