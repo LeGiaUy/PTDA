@@ -157,7 +157,7 @@ function LayoutDefault() {
                         </div>
 
                         {/* Phần bên phải: Tìm kiếm, giỏ hàng, đăng nhập/đăng ký */}
-                        <div className="flex items-center gap-12">
+                        <div className="flex items-center gap-12 pr-4">
                         {/* Nút tìm kiếm */}
                         <button className="text-gray-700 hover:text-cyan-700">
                             <NavLink to="search">
@@ -210,7 +210,7 @@ function LayoutDefault() {
                     <Outlet />
                 </div>
             </div>
-            <footer className="bg-gray-100 py-8">
+            <footer className="bg-gray-100 py-8 my-8">
                 <div className="container mx-auto px-6 lg:px-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Liên kết */}
                     <div>
