@@ -1,30 +1,37 @@
 import { useEffect, useState } from "react";
-import { get } from "../../utils/request";
 import { getProductList } from "../../services/productService";
 import ProductItem from "./productItem";
 
-function MayTinh_ASUS(){
-    const [data, setData]= useState([]);
-    useEffect(() => {
-        const fetchApi = async() =>{
-            const response = await getProductList();
-            setData(response);
-        }
-        fetchApi();
-    },[])
-    // console.log(data);
-    
-    return (
-        <>
-        <h2>DANH SÁCH SẢN PHẨM</h2>
-        {data.length >0 && (
-            <div className="product">
-                {data.map((item) => (
-                    <ProductItem key={item.id} item={item} />
-                ))}
-            </div>
-        )}
-        </>
-    )
+export function Products() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchApi = async () => {
+      const response = await getProductList();
+      setData(response);
+    };
+    fetchApi();
+  }, []);
+
+  return (
+    <>
+      
+
+      {data.length > 0 && (
+        <div className="bg-gray-100 mx-12 rounded-xl">
+          <h2 className="text-cyan-700 font-semibold text-3xl text-center py-8">
+            DANH SÁCH SẢN PHẨM
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-12 py-8">
+            {data.map((item) => (
+              <ProductItem key={item.id} item={item} />
+            ))}
+          </div>
+        </div>
+        
+      )}
+    </>
+  );
 }
-export default MayTinh_ASUS;
+
+export default Products;
