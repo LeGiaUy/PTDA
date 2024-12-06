@@ -14,9 +14,9 @@ function LayoutDefault() {
     };
     return (
         <>
-            <nav id="header">
+            <nav id="header" className="sticky top-0 z-50 shadow-md mb-8">
                 <div className="bg-white w-full top-0 left-0 z-40 px-8">
-                    <div className="py-4">
+                    <div className="py-0">
                     <div className="container flex justify-between items-center">
                         {/* Phần bên trái: Logo và liên kết chính */}
                         <div className="flex items-center gap-6">
@@ -48,7 +48,7 @@ function LayoutDefault() {
                                 Sản phẩm
                             </NavLink>
                             {/* Dropdown */}
-                            <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-md -ml-4">
+                            <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-md -ml-4 z-99">
                                 <ul>
                                 {/* Điện thoại */}
                                 <li className="relative group/item1 px-4 py-2">

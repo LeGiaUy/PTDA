@@ -1,7 +1,7 @@
 export function Contact() {
     return (
         <>
-            <div className="container mx-auto p-12">
+            <div className="container mx-auto m-6">
                 <div className="bg-gray-100 p-6 rounded-lg shadow-md">
                     <div className="row">
                         <div className="col-sm-12">
