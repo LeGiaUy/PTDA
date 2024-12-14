@@ -1,9 +1,10 @@
-import Modal from 'react-modal';
 import { useEffect, useState } from "react";
+import Modal from 'react-modal';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 import 'sweetalert2/src/sweetalert2.scss';
 import { getListCategory } from '../../services/categorytService';
 import { createProduct } from '../../services/productService';
+
 function CreateProduct(props) {
     const { onReload } = props;
     const [showModal, setShowModal] = useState(false);
@@ -12,29 +13,18 @@ function CreateProduct(props) {
 
     useEffect(() => {
         const fetchApi = async () => {
-            const result = await getListCategory()
+            const result = await getListCategory();
             setDataCategory(result);
         };
         fetchApi();
     }, []);
-
-    const customStyles = {
-        content: {
-            top: '50%',
-            left: '50%',
-            right: 'auto',
-            bottom: 'auto',
-            marginRight: '-50%',
-            transform: 'translate(-50%, -50%)',
-        },
-    };
 
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
         setData({
             ...data,
-            [name]: value
+            [name]: value,
         });
     };
 
@@ -49,86 +39,120 @@ function CreateProduct(props) {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Kiểm tra dữ liệu trước khi gửi
-        // console.log(data);
-        const result = await createProduct(data)
+        const result = await createProduct(data);
         if (result) {
-                setShowModal(false);
-                onReload(); // Tải lại danh sách sản phẩm
-                Swal.fire({
-                    position: "center",
-                    icon: "success",
-                    title: "Tạo mới sản phẩm thành công",
-                    showConfirmButton: false,
-                    timer: 1500
-                  });
-            }
-
+            setShowModal(false);
+            onReload(); // Reload danh sách sản phẩm
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Tạo mới sản phẩm thành công",
+                showConfirmButton: false,
+                timer: 1500,
+            });
+        }
     };
 
     return (
         <>
-            <button onClick={openModal}>Tạo sản phẩm mới</button>
+            <div className="flex justify-center">
+                <button
+                    onClick={openModal}
+                    className="bg-cyan-700 text-white px-4 py-2 rounded hover:bg-cyan-900 transition"
+                >
+                    Tạo sản phẩm mới
+                </button>
+            </div>
 
             <Modal
                 isOpen={showModal}
                 onRequestClose={closeModal}
-                style={customStyles}
-                contentLabel="Example Modal"
+                className="fixed inset-0 flex items-center justify-center"
+                overlayClassName="fixed inset-0 bg-black bg-opacity-50"
+                ariaHideApp={false}
             >
-                <form onSubmit={handleSubmit}>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>Tên sản phẩm</td>
-                                <td>
-                                    <input type='text' onChange={handleChange} required name='name' style={{ border: "1px solid #000000", padding: "3px", width: "100%" }} />
-                                </td>
-                            </tr>
-                            {dataCategory.length > 0 && (
-                                <tr>
-                                    <td>Danh mục</td>
-                                    <td>
-                                        <select onChange={handleChange} style={{ border: "1px solid #000000", padding: "2px", width: "100%" }} name='category_id' required>
-                                            <option value="">Chọn danh mục</option>
-                                            {dataCategory.map((item) => (
-                                                <option key={item.id} value={item.id}>{item.name}</option>
-                                            ))}
-                                        </select>
-                                    </td>
-                                </tr>
-                            )}
-                            <tr>
-                                <td>Giá</td>
-                                <td>
-                                    <input type='text' onChange={handleChange} name='price' required style={{ border: "1px solid #000000", padding: "3px", width: "100%" }} />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Link ảnh</td>
-                                <td>
-                                    <input onChange={handleChange} required type='text' name='image_url' style={{ border: "1px solid #000000", padding: "3px", width: "100%" }} />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Miêu tả</td>
-                                <td>
-                                    <textarea required onChange={handleChange} name='description' style={{ border: "1px solid #000000", padding: "3px", width: "100%" }} />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <button onClick={closeModal}>
-                                        Hủy
-                                    </button>
-                                </td>
-                                <td>
-                                    <input type='submit' value="Tạo mới" />
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </form>
+                <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-center">Tạo Sản Phẩm Mới</h2>
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                        <div>
+                            <label className="block text-sm font-medium mb-1">Tên sản phẩm</label>
+                            <input
+                                type="text"
+                                onChange={handleChange}
+                                required
+                                name="name"
+                                className="border rounded w-full px-3 py-2 focus:ring-2 focus:ring-cyan-700 outline-none"
+                            />
+                        </div>
+
+                        {dataCategory.length > 0 && (
+                            <div>
+                                <label className="block text-sm font-medium mb-1">Danh mục</label>
+                                <select
+                                    onChange={handleChange}
+                                    name="category_id"
+                                    required
+                                    className="border rounded w-full px-3 py-2 focus:ring-2 focus:ring-cyan-700 outline-none"
+                                >
+                                    <option value="">Chọn danh mục</option>
+                                    {dataCategory.map((item) => (
+                                        <option key={item.id} value={item.id}>
+                                            {item.name}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+                        )}
+
+                        <div>
+                            <label className="block text-sm font-medium mb-1">Giá</label>
+                            <input
+                                type="text"
+                                onChange={handleChange}
+                                name="price"
+                                required
+                                className="border rounded w-full px-3 py-2 focus:ring-2 focus:ring-cyan-700 outline-none"
+                            />
+                        </div>
+
+                        <div>
+                            <label className="block text-sm font-medium mb-1">Link ảnh</label>
+                            <input
+                                type="text"
+                                onChange={handleChange}
+                                name="image_url"
+                                required
+                                className="border rounded w-full px-3 py-2 focus:ring-2 focus:ring-cyan-700 outline-none"
+                            />
+                        </div>
+
+                        <div>
+                            <label className="block text-sm font-medium mb-1">Miêu tả</label>
+                            <textarea
+                                onChange={handleChange}
+                                name="description"
+                                required
+                                className="border rounded w-full px-3 py-2 focus:ring-2 focus:ring-cyan-700 outline-none"
+                            ></textarea>
+                        </div>
+
+                        <div className="flex justify-end space-x-4">
+                            <button
+                                type="button"
+                                onClick={closeModal}
+                                className="bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400 transition"
+                            >
+                                Hủy
+                            </button>
+                            <button
+                                type="submit"
+                                className="bg-cyan-700 text-white px-4 py-2 rounded focus:bg-cyan-900 transition"
+                            >
+                                Tạo mới
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </Modal>
         </>
     );

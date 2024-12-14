@@ -1,5 +1,5 @@
-import Modal from 'react-modal';
 import { useEffect, useState } from "react";
+import Modal from 'react-modal';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 import 'sweetalert2/src/sweetalert2.scss';
 import { getListCategory } from '../../services/categorytService';
@@ -10,8 +10,6 @@ function EditProduct(props) {
     const [showModal, setShowModal] = useState(false);
     const [data, setData] = useState(item);
     const [dataCategory, setDataCategory] = useState([]);
-
-
 
     useEffect(() => {
         const fetchApi = async () => {
@@ -52,9 +50,6 @@ function EditProduct(props) {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Kiểm tra dữ liệu trước khi gửi
-        // console.log(data);
-       
         const result = await editProduct(item.id, data)
         if (result) {
             setShowModal(false);
@@ -62,72 +57,123 @@ function EditProduct(props) {
             Swal.fire({
                 position: "center",
                 icon: "success",
-                title: "Cập nhập sản phẩm thành công",
+                title: "Cập nhật sản phẩm thành công",
                 showConfirmButton: false,
                 timer: 1500
             });
         }
-
     };
 
     return (
         <>
-            <button onClick={openModal}>Chỉnh sửa</button>
+            <button
+                onClick={openModal}
+                className="px-4 py-2 bg-cyan-700 text-white font-semibold rounded-lg shadow-md hover:bg-cyan-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+            >
+                Chỉnh sửa
+            </button>
 
             <Modal
                 isOpen={showModal}
                 onRequestClose={closeModal}
                 style={customStyles}
-                contentLabel="Example Modal"
+                contentLabel="Chỉnh sửa sản phẩm"
             >
-                <form onSubmit={handleSubmit}>
-                    <table>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                    <table className="w-full">
                         <tbody>
                             <tr>
-                                <td>Tên sản phẩm</td>
+                                <td className="py-2 font-semibold">Tên sản phẩm</td>
                                 <td>
-                                    <input value={data.name} type='text' onChange={handleChange} required name='name' style={{ border: "1px solid #000000", padding: "3px", width: "100%" }} />
+                                    <input
+                                        value={data.name}
+                                        type="text"
+                                        onChange={handleChange}
+                                        required
+                                        name="name"
+                                        className="border border-gray-300 p-2 w-full rounded-lg"
+                                    />
                                 </td>
                             </tr>
+
                             {dataCategory.length > 0 && (
                                 <tr>
-                                    <td>Danh mục</td>
+                                    <td className="py-2 font-semibold">Danh mục</td>
                                     <td>
-                                        <select value={data.category_id} onChange={handleChange} style={{ border: "1px solid #000000", padding: "2px", width: "100%" }} name='category_id' required>
+                                        <select
+                                            value={data.category_id}
+                                            onChange={handleChange}
+                                            name="category_id"
+                                            required
+                                            className="border border-gray-300 p-2 w-full rounded-lg"
+                                        >
                                             <option value="">Chọn danh mục</option>
                                             {dataCategory.map((item) => (
-                                                <option key={item.id} value={item.id}>{item.name}</option>
+                                                <option key={item.id} value={item.id}>
+                                                    {item.name}
+                                                </option>
                                             ))}
                                         </select>
                                     </td>
                                 </tr>
                             )}
+
                             <tr>
-                                <td>Giá</td>
+                                <td className="py-2 font-semibold">Giá</td>
                                 <td>
-                                    <input value={data.price} type='text' onChange={handleChange} name='price' required style={{ border: "1px solid #000000", padding: "3px", width: "100%" }} />
+                                    <input
+                                        value={data.price}
+                                        type="text"
+                                        onChange={handleChange}
+                                        name="price"
+                                        required
+                                        className="border border-gray-300 p-2 w-full rounded-lg"
+                                    />
                                 </td>
                             </tr>
+
                             <tr>
-                                <td>Link ảnh</td>
+                                <td className="py-2 font-semibold">Link ảnh</td>
                                 <td>
-                                    <input value={data.image_url} onChange={handleChange} required type='text' name='image_url' style={{ border: "1px solid #000000", padding: "3px", width: "100%" }} />
+                                    <input
+                                        value={data.image_url}
+                                        onChange={handleChange}
+                                        required
+                                        type="text"
+                                        name="image_url"
+                                        className="border border-gray-300 p-2 w-full rounded-lg"
+                                    />
                                 </td>
                             </tr>
+
                             <tr>
-                                <td>Miêu tả</td>
+                                <td className="py-2 font-semibold">Miêu tả</td>
                                 <td>
-                                    <textarea value={data.description} required onChange={handleChange} name='description' style={{ border: "1px solid #000000", padding: "3px", width: "100%" }} />
+                                    <textarea
+                                        value={data.description}
+                                        required
+                                        onChange={handleChange}
+                                        name="description"
+                                        className="border border-gray-300 p-2 w-full rounded-lg"
+                                    />
                                 </td>
                             </tr>
+
                             <tr>
                                 <td>
-                                    <button onClick={closeModal}>
+                                    <button
+                                        onClick={closeModal}
+                                        className="px-4 py-2 bg-gray-400 text-white font-semibold rounded-lg shadow-md hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50"
+                                    >
                                         Hủy
                                     </button>
                                 </td>
                                 <td>
-                                    <input type='submit' value="Chỉnh sửa" />
+                                    <input
+                                        type="submit"
+                                        value="Chỉnh sửa"
+                                        className="px-4 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+                                    />
                                 </td>
                             </tr>
                         </tbody>

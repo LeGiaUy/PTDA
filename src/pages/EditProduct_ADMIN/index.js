@@ -1,8 +1,8 @@
+import { useState } from "react";
 import CreateProduct from "./CreateProduct";
 import ProductList from "./ProductList";
-import { useState } from "react";
 
-import "./Product.scss"
+import "./Product.scss";
 function EditProduct() {
     const [reload, setReload] = useState(false);
     
@@ -11,11 +11,11 @@ function EditProduct() {
     }
     
     return(
-        <>
-            <h2>Danh sach san pham</h2>
+        <div className="bg-gray-100 mx-12 rounded-xl">
+            <h2 className="text-cyan-700 font-semibold text-3xl text-center py-8">Danh sach san pham</h2>
             <CreateProduct onReload={handleReload}/>
             <ProductList reload={reload}/>
-        </>
+        </div>
     )
 }
 export default EditProduct;
