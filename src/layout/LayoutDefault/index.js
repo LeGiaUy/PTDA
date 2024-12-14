@@ -26,7 +26,7 @@ function LayoutDefault() {
                                     <a href="/">
                                         <img
                                             className="w-20 sm:w-24 h-auto"
-                                            src="images/home/processed_image_2_cleaned.png"
+                                            src="images/home/logo.jpg"
                                             alt="Logo"
                                         />
                                     </a>
