@@ -47,84 +47,86 @@ function Register() {
     };
 
     return (
-        <section id="form" className="py-12">
-            <div className="container mx-auto">
-                <div className="max-w-md mx-auto bg-white p-8 rounded-xl shadow-md">
-                    <h2 className="text-2xl font-semibold text-center mb-6">Đăng ký tài khoản</h2>
+        <div className="md:ml-24">            ''
+            <section id="form" className="py-12">
+                <div className="container mx-auto">
+                    <div className="max-w-md mx-auto bg-white p-8 rounded-xl shadow-md">
+                        <h2 className="text-2xl font-semibold text-center mb-6">Đăng ký tài khoản</h2>
 
-                    {error && <div className="text-red-500 text-center mb-4">{error}</div>}
+                        {error && <div className="text-red-500 text-center mb-4">{error}</div>}
 
-                    <form onSubmit={handleSubmit} className="space-y-4">
-                        <div>
-                            <input
-                                type="text"
-                                placeholder="Nhập họ và tên"
-                                value={fullName}
-                                onChange={(e) => setFullName(e.target.value)}
-                                required
-                                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-700"
-                            />
-                        </div>
+                        <form onSubmit={handleSubmit} className="space-y-4">
+                            <div>
+                                <input
+                                    type="text"
+                                    placeholder="Nhập họ và tên"
+                                    value={fullName}
+                                    onChange={(e) => setFullName(e.target.value)}
+                                    required
+                                    className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-700"
+                                />
+                            </div>
 
-                        <div>
-                            <input
-                                type="text"
-                                placeholder="Thành phố đang sống"
-                                value={city}
-                                onChange={(e) => setCity(e.target.value)}
-                                required
-                                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-700"
-                            />
-                        </div>
+                            <div>
+                                <input
+                                    type="text"
+                                    placeholder="Thành phố đang sống"
+                                    value={city}
+                                    onChange={(e) => setCity(e.target.value)}
+                                    required
+                                    className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-700"
+                                />
+                            </div>
 
-                        <div>
-                            <input
-                                type="text"
-                                id="date_of_birth"
-                                name="date_of_birth"
-                                placeholder="dd/mm/yyyy"
-                                pattern="\d{2}/\d{2}/\d{4}"
-                                value={birth}
-                                onChange={(e) => setBirth(e.target.value)}
-                                required
-                                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-700"
-                            />
-                        </div>
+                            <div>
+                                <input
+                                    type="text"
+                                    id="date_of_birth"
+                                    name="date_of_birth"
+                                    placeholder="dd/mm/yyyy"
+                                    pattern="\d{2}/\d{2}/\d{4}"
+                                    value={birth}
+                                    onChange={(e) => setBirth(e.target.value)}
+                                    required
+                                    className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-700"
+                                />
+                            </div>
 
-                        <div>
-                            <input
-                                type="number"
-                                placeholder="Nhập số điện thoại"
-                                value={phonenumber}
-                                onChange={(e) => setPhonenumber(e.target.value)}
-                                required
-                                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-700"
-                            />
-                        </div>
+                            <div>
+                                <input
+                                    type="number"
+                                    placeholder="Nhập số điện thoại"
+                                    value={phonenumber}
+                                    onChange={(e) => setPhonenumber(e.target.value)}
+                                    required
+                                    className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-700"
+                                />
+                            </div>
 
-                        <div>
-                            <input
-                                type="password"
-                                placeholder="Nhập mật khẩu"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                required
-                                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-700"
-                            />
-                        </div>
+                            <div>
+                                <input
+                                    type="password"
+                                    placeholder="Nhập mật khẩu"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    required
+                                    className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-700"
+                                />
+                            </div>
 
-                        <div>
-                            <button
-                                type="submit"
-                                className="w-full py-3 bg-cyan-700 text-white rounded-md hover:bg-cyan-900 focus:outline-none focus:ring-2 focus:ring-cyan-700 transition"
-                            >
-                                Đăng ký
-                            </button>
-                        </div>
-                    </form>
+                            <div>
+                                <button
+                                    type="submit"
+                                    className="w-full py-3 bg-cyan-700 text-white rounded-md hover:bg-cyan-900 focus:outline-none focus:ring-2 focus:ring-cyan-700 transition"
+                                >
+                                    Đăng ký
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     );
 }
 

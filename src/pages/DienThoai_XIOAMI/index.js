@@ -14,7 +14,7 @@ export function Products() {
   }, []);
 
   return (
-    <>
+    <div className="md:ml-24">
       
 
       {data.length > 0 && (
@@ -30,7 +30,7 @@ export function Products() {
         </div>
         
       )}
-    </>
+    </div>
   );
 }
 

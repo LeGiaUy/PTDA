@@ -1,7 +1,7 @@
 export function Contact() {
     return (
-        <>
-            <div className="container mx-auto m-6">
+        <div className="md:ml-24">
+            <div className="container mx-auto m-6 ">
                 <div className="bg-gray-100 p-6 rounded-lg shadow-md">
                     <div className="row">
                         <div className="col-sm-12">
@@ -79,7 +79,7 @@ export function Contact() {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

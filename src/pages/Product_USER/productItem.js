@@ -35,7 +35,7 @@ function ProductItem({ item }) {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden relative flex flex-col">
       <img
-        className="w-full h-90 object-cover"
+        className="w-full h-40 object-contain"
         src={item.image_url}
         alt={item.name}
       />

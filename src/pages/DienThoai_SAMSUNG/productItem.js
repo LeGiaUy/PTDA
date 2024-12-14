@@ -36,7 +36,7 @@ function ProductItem({ item }) {
             {item.category_id === 2 && item.company==="Samsung" &&(
                 <div className="bg-white rounded-lg shadow-md overflow-hidden relative flex flex-col">
                 <img
-                  className="w-full h-90 object-cover"
+                  className="w-full h-40 object-contain"
                   src={item.image_url}
                   alt={item.name}
                 />

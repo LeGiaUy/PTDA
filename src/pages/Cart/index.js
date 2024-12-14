@@ -19,32 +19,34 @@ function Cart() {
     }
 
     return (
-        <div className="bg-gray-100 rounded-xl mx-12">
-            <div className="text-center container mx-auto py-6">
-            {/* Kiểm tra nếu giỏ hàng có sản phẩm */}
-            <div className="mt-0">
-                {cart.length > 0 ? (
-                    <>
-                        <CartList />
-                        <div className="mt-4 text-lg font-semibold">
-                            Tổng chi phí: <span className="text-cyan-700">{total}$</span>
-                        </div>
-                    </>
-                ) : (
-                    <div className="text-center text-gray-500">Giỏ hàng trống</div>
-                )}
-            </div>
+        <div className="md:ml-24">
 
-            {/* Nút xóa tất cả sản phẩm */}
-            <button
-                onClick={handleDeleteAll}
-                className="px-4 py-2 bg-cyan-700 text-white rounded-md hover:bg-cyan-900 transition my-8"
-            >
-                Xóa tất cả
-            </button>
+            <div className="bg-gray-100 rounded-xl mx-12">
+                <div className="text-center container mx-auto py-6">
+                    {/* Kiểm tra nếu giỏ hàng có sản phẩm */}
+                    <div className="mt-0">
+                        {cart.length > 0 ? (
+                            <>
+                                <CartList />
+                                <div className="mt-4 text-lg font-semibold">
+                                    Tổng chi phí: <span className="text-cyan-700">{total}$</span>
+                                </div>
+                            </>
+                        ) : (
+                            <div className="text-center text-gray-500">Giỏ hàng trống</div>
+                        )}
+                    </div>
+
+                    {/* Nút xóa tất cả sản phẩm */}
+                    <button
+                        onClick={handleDeleteAll}
+                        className="px-4 py-2 bg-cyan-700 text-white rounded-md hover:bg-cyan-900 transition my-8"
+                    >
+                        Xóa tất cả
+                    </button>
+                </div>
+            </div>
         </div>
-        </div>
-        
     );
 }
 

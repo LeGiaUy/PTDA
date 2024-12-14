@@ -45,7 +45,7 @@ function SearchComponent() {
     };
 
     return (
-        <div className="container mx-auto p-12">
+        <div className="container mx-auto p-12 md:ml-12">
             <div className="flex items-center mb-6">
                 <input
                     type="text"

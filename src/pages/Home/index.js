@@ -79,16 +79,19 @@ function Home() {
   ];
 
   return (
-    <section className="bg-gray-100 mx-12 rounded-xl">
-      <div className="container mx-auto px-4">
-        <h2 className="text-cyan-700 font-semibold text-3xl text-center py-8">SẢN PHẨM NỔI BẬT</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-          {products.map((product) => (
-            <ProductItem key={product.id} item={product} />
-          ))}
+    <div className="md:ml-24">
+      <section className="bg-gray-100 mx-12 rounded-xl">
+        <div className="container mx-auto px-4">
+          <h2 className="text-cyan-700 font-semibold text-3xl text-center py-8">SẢN PHẨM NỔI BẬT</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {products.map((product) => (
+              <ProductItem key={product.id} item={product} />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+    </div>
   );
 }
 

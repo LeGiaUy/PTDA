@@ -14,9 +14,7 @@ export function Products() {
   }, []);
 
   return (
-    <>
-      
-
+    <div className="md:ml-24">
       {data.length > 0 && (
         <div className="bg-gray-100 mx-12 rounded-xl">
           <h2 className="text-cyan-700 font-semibold text-3xl text-center py-8">
@@ -30,7 +28,7 @@ export function Products() {
         </div>
         
       )}
-    </>
+    </div>
   );
 }
 
